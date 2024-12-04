@@ -1,0 +1,416 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #e8eaf6, #e0e0e0);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.dashboard-container {
+    width: 95%;
+    max-width: 1200px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    overflow-y: auto;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.dashboard-header {
+    text-align: center;
+    margin-bottom: 20px;
+    animation: slideIn 0.5s ease-in-out;
+}
+
+.role-message {
+    font-size: 1rem;
+    color: #555;
+}
+
+h1, h2, h3, h4 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+h1 {
+    color: #007bb5; /* Primary color */
+    font-size: 2.5rem;
+}
+
+.task-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.task-card {
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: calc(33% - 20px); /* Three columns */
+    margin: 10px 0;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.task-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background-color: #e0eaf6; /* Light hover effect */
+}
+
+.task-card h4 {
+    margin: 0 0 10px;
+    color: #007bb5;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.task-card h4:hover {
+    color: #005a8e; /* Darker shade on hover */
+}
+
+.task-card p {
+    margin: 5px 0;
+    color: #444;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.task-card p strong {
+    color: #333;
+}
+
+.task-card button {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #007bb5;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.task-card button:hover {
+    background-color: #005a8e;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 123, 181, 0.2);
+}
+
+.task-card button:active {
+    background-color: #004085;
+    box-shadow: 0 4px 10px rgba(0, 123, 181, 0.3);
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+}
+
+footer a {
+    display: inline-block;
+    margin: 8px 12px;
+    color: #007bb5;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s, text-decoration 0.3s;
+}
+
+footer a:hover {
+    color: #005a8e;
+    text-decoration: underline;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .task-card {
+        width: calc(50% - 20px); /* Two columns on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .task-card {
+        width: 100%; /* Single column on very small screens */
+    }
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #e8eaf6, #e0e0e0);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.create-task-container {
+    width: 95%;
+    max-width: 1200px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+h2 {
+    color: #007bb5;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.task-form-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    animation: slideIn 0.5s ease-in-out;
+}
+
+.task-form-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+    vertical-align: middle;
+    transition: background-color 0.3s;
+}
+
+.task-form-table label {
+    display: block;
+    font-weight: 600;
+    color: #333;
+}
+
+.task-form-table input,
+.task-form-table select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.task-form-table input:focus,
+.task-form-table select:focus {
+    border-color: #007bb5;
+    box-shadow: 0 0 5px rgba(0, 123, 181, 0.5);
+}
+
+button[type="submit"] {
+    background-color: #007bb5;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button[type="submit"]:hover {
+    background-color: #005a8e;
+    transform: scale(1.05);
+}
+
+button[type="submit"]:active {
+    transform: scale(1);
+}
+
+p {
+    text-align: center;
+    margin-top: 15px;
+}
+
+p a {
+    color: #007bb5;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+p a:hover {
+    color: #005a8e;
+    text-decoration: underline;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .task-form-table td {
+        padding: 10px;
+    }
+    button[type="submit"] {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .task-form-table td {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+    button[type="submit"] {
+        font-size: 0.85rem;
+        padding: 6px 14px;
+    }
+}
+
+.signup-form {
+    width: 100%;
+    max-width: 400px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+h2 {
+    color: #007bb5;
+    margin-bottom: 25px;
+    font-size: 2rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form p {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+form p a {
+    color: #007bb5;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+form p a:hover {
+    color: #005a8e;
+    text-decoration: underline;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="password"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    width: 100%;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #007bb5;
+    box-shadow: 0 0 5px rgba(0, 123, 181, 0.5);
+}
+
+button[type="submit"] {
+    background-color: #007bb5;
+    color: #ffffff;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #005a8e;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 123, 181, 0.2);
+}
+
+button[type="submit"]:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 10px rgba(0, 123, 181, 0.3);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .signup-form {
+        padding: 20px;
+    }
+    h2 {
+        font-size: 1.8rem;
+    }
+}

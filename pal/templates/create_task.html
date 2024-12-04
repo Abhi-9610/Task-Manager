@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Task</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="create-task-container">
+        <h2>Create a New Task</h2>
+        <form method="post">
+            {% csrf_token %}
+            <table class="task-form-table">
+                <tr>
+                    <td><label for="assigned_by">Assigned By:</label></td>
+                    <td>{{ form.assigned_by }}</td>
+                </tr>
+                <tr>
+                    <td><label for="task_description">Task Description:</label></td>
+                    <td>{{ form.task_description }}</td>
+                </tr>
+                <tr>
+                    <td><label for="assigned_to">Assigned To:</label></td>
+                    <td>{{ form.assigned_to }}</td>
+                </tr>
+                <tr>
+                    <td><label for="assigned_date">Assigned Date:</label></td>
+                    <td><input type="date" id="assigned_date" name="assigned_date" required></td>
+                </tr>
+                <tr>
+                    <td><label for="deadline">Deadline:</label></td>
+                    <td><input type="date" id="deadline" name="deadline" required></td>
+                </tr>
+                <tr>
+                    <td><label for="priority">Priority:</label></td>
+                    <td>{{ form.priority }}</td>
+                </tr>
+                <tr>
+                    <td><label for="progress">Progress:</label></td>
+                    <td>
+                        <select id="progress" name="progress">
+                            <option value="Nothing">NA</option>
+                            <option value="not started">Not Started</option>
+                            <option value="started">Started</option>
+                            <option value="in between">In Between</option>
+                            <option value="completed">Completed</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <button class="submit-button" type="submit">Create Task</button>
+        </form>
+        <p class="back-link"><a href="{% url 'dashboard' %}">Back to Dashboard</a></p>
+    </div>
+    {% if form.errors %}
+    <div class="error-messages">
+        <p>There were some errors with your submission:</p>
+        <ul>
+            {% for field, errors in form.errors.items %}
+                {% for error in errors %}
+                    <li><strong>{{ field }}:</strong> {{ error }}</li>
+                {% endfor %}
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}
+</body>
+</html>
